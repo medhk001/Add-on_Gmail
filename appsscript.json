@@ -1,0 +1,62 @@
+{
+  "timeZone": "Africa/Casablanca",
+  "dependencies": {
+  },
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/documents.currentonly",
+    "https://www.googleapis.com/auth/documents",
+    "https://www.google.com/m8/feeds",
+    "https://sites.google.com/feeds",
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/gmail.modify",
+    "https://mail.google.com/",
+    "https://www.googleapis.com/auth/script.external_request",
+    "https://www.googleapis.com/auth/spreadsheets.readonly",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/script.external_request",
+    "https://www.googleapis.com/auth/gmail.addons.current.action.compose",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/script.locale",
+    "https://www.googleapis.com/auth/presentations.currentonly",
+    "https://www.googleapis.com/auth/presentations",
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.google.com/m8/feeds",
+    "https://www.googleapis.com/auth/drive.readonly",
+    "https://www.googleapis.com/auth/drive"
+  ],
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "addOns": {
+    "common": {
+      "name": "GDApp",
+      "logoUrl": "https://www.pngfind.com/pngs/m/54-545104_search-icon-png-format-search-engine-optimization-icon.png",
+      "openLinkUrlPrefixes": [
+        "https://www.google.com"
+      ],
+      "universalActions": [
+        {
+          "label": "Add Your Sheet",
+          "runFunction": "Add"
+        }
+      ]
+    },
+    "gmail": {
+      "contextualTriggers": [
+        {
+          "unconditional": {},
+          "onTriggerFunction": "onGmailMessage"
+        }
+      ],
+      "composeTrigger": {
+        "selectActions": [
+          {
+            "text": "Insert",
+            "runFunction": "onGmailCompose"
+          }
+        ],
+        "draftAccess": "NONE"
+      }
+    }
+  }
+}
